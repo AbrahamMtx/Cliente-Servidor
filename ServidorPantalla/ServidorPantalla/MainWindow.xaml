@@ -1,0 +1,23 @@
+﻿<Window x:Class="ServidorPantalla.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServidorPantalla"
+        mc:Ignorable="d"
+        Title="Pantalla" MinHeight="450" MinWidth="700" MaxHeight="350" MaxWidth="700">
+    
+    
+    
+    <DockPanel Margin="8" Background="Transparent">
+        <TextBlock Foreground="White" Text="{Binding Conexion}" DockPanel.Dock="Top" FontSize="11" Background="Blue" Padding="0,3"></TextBlock>
+        <WrapPanel DockPanel.Dock="Top" Margin="0,10,10,0" HorizontalAlignment="Right">
+            <Button Click="iniciar_Click"  x:Name="iniciar" BorderBrush="Blue" Foreground="Blue" Width="100" Height="30" Background="White" Command="{Binding IniciarCommand}">Iniciar</Button>
+            <Button Click="detener_Click"  x:Name="detener" BorderBrush="Red" Foreground="Red" Width="100" Height="30" Background="White" Command="{Binding DetenerCommand}">Detener</Button>
+        </WrapPanel>
+    <UniformGrid Columns="1" Background="Transparent">
+            <ListBox ItemsSource="{Binding Mensaje}" FontSize="50"></ListBox>
+    </UniformGrid>
+        
+    </DockPanel>
+</Window>
